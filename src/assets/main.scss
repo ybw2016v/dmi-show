@@ -21,7 +21,12 @@
 .mfm-mention {
     // color: #0c598d;
     text-decoration: none;
-    // background-color: beige;
+    background-color: rgba(39, 247, 230, 0.466);
+    padding: 2px 4px 2px 4px;
+    // margin: 8px 4px 4px 8px;
+    border-radius: 10px;
+    display: inline;
+
 }
 
 .timelink {
@@ -51,3 +56,12 @@
         margin: 0.2em 0.2em 0em 0em;
     }
 }
+
+.mfm-quote {
+    margin: 0.5em 0.5em 0.5em 0.5em;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    border-left: 0.2em solid #60a4e9;
+    background-color: #f0f0f0;
+    
+}
+

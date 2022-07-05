@@ -18,7 +18,6 @@ import gbs from '../settings.json';
 const props = defineProps(['dame']);
 const imgurl = ref(null);
 getem(props.dame,gbs.myhost).then(data => {
-    console.log(data);
     imgurl.value = data;
 });
 </script>

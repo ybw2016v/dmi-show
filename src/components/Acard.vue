@@ -9,7 +9,7 @@
         <div class="nameplace">{{ di.name }}</div>
       </a>
       <div class="bg">
-        <span class="badge bg-info">{{ alif.title }}</span>
+        <span class="badge bg-info">{{ `@${uname}@${hname}` }}</span>
       </div>
       <div class="bif">
         <ul class="list-group">
@@ -55,8 +55,7 @@ import Icon from './Icon.vue';
 import M from './mfm.js';
 // import { defineProps } from 'vue';
 
-const props = defineProps(['di', 'avatar', 'alif']);
-console.log(props.di);
+const props = defineProps(['di', 'avatar', 'alif','uname','hname']);
 const dp = props.alif.description.split(" · ");
 const floo = ref(dp[0]);
 const bio = ref(dp[1]);
@@ -78,8 +77,8 @@ const bio = ref(dp[1]);
 
 .nameplace {
   position: absolute;
-  top: 50px;
-  left: 150px;
+  top: 40px;
+  left: 135px;
   font-size: 25px;
   font-weight: bold;
   color: #2979ff;
@@ -101,7 +100,7 @@ const bio = ref(dp[1]);
 .avatar {
   position: absolute;
   border-radius: 50%;
-  top: 40px;
+  top: 35px;
   left: 30px;
 }
 
@@ -114,13 +113,14 @@ const bio = ref(dp[1]);
 
 .bg {
   position: absolute;
-  top: 90px;
-  left: 150px;
+  top: 80px;
+  left: 135px;
+  font-size: 14px;
 }
 
 .bif {
   border: 1px;
-  font-size: 17px;
+  font-size: 16px;
   /*   position: absolute; */
   margin: 140px 20px 10px 10px;
   /*   top:140px; */

@@ -12,7 +12,6 @@ function validTime(t) {
 
 
 function rd(itm) {
-    console.log(itm);
     if (isArray(itm)) {
         return itm.map(rd);
     }

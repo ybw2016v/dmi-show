@@ -1,6 +1,6 @@
 <template>
     <div v-if="Infodog != null" class="container-sm">
-        <Acard :di="Infodog.author" :avatar="Infodog.icon" :alif="Infodog" />
+        <Acard :di="Infodog.author" :avatar="Infodog.icon" :alif="Infodog" :uname="sname" :hname="hostname" />
     </div>
     <div v-if="err">
         <div class="card edog">
@@ -29,6 +29,8 @@ import gbs from '../settings.json';
 const Infodog = ref(null);
 const err = ref(false);
 const etime = ref(null);
+const sname = ref(null);
+const hostname = ref(null);
 // getdoginfo().then(data => {
 //     Infodog.value = data;
 // });
@@ -38,6 +40,8 @@ if (uname && gbs.myhost) {
     const resi = await getdoginfo(gbs.myhost, uname);
     if (resi) {
         Infodog.value = resi;
+        sname.value = uname;
+        hostname.value = gbs.myhost;
     } else {
         console.log("Error");
         err.value = true;
