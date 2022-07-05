@@ -1,0 +1,53 @@
+.mfm-link {
+    color: #0c598d;
+    background-color: beige;
+}
+
+.mfm-link:hover {
+    color: #fdfeff;
+    background-color: #08b9ffe5;
+}
+
+.uname {
+    // text-decoration: none;
+    color: #19a3ff;
+}
+
+.uhost {
+    // text-decoration: none;
+    color: #1274b4;
+}
+
+.mfm-mention {
+    // color: #0c598d;
+    text-decoration: none;
+    // background-color: beige;
+}
+
+.timelink {
+    text-align: end;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    a {
+        
+        color: #002a46;
+        font-size: 0.75em;
+    }
+    a:hover {
+        color: #0080ff;
+        font-size: 0.85em;
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+.ctd {
+    margin: 2em 0 0.5em 0.5em;
+
+}
+
+.ipic {
+    margin: 0.2em 0.2em 0.5em 0.5em;
+    img {
+        margin: 0.2em 0.2em 0em 0em;
+    }
+}
