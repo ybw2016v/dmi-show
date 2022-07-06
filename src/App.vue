@@ -2,8 +2,23 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 // import HelloWorld from './components/HelloWorld.vue'
-import InfoListVue from './components/InfoList.vue';
-import './assets/main.scss';
+import InfoListVue from "./components/InfoList.vue";
+import "./assets/main.scss";
+// var HI=0;
+function hightchange() {
+  const Hig = window.document.body.scrollHeight;
+  const Hig2 = window.document.documentElement.scrollHeight;
+  const High = Math.max(Hig, Hig2);
+  if (window.HI != High) {
+    window.HI = High;
+    console.log(High);
+    window.parent.postMessage(High, "*");
+  }
+}
+setInterval(() => {
+  hightchange();
+}, 1000);
+
 </script>
 
 <template>
@@ -14,10 +29,8 @@ import './assets/main.scss';
   </div>
   <Suspense>
     <InfoListVue />
-    <template #fallback>
-      Loading……
-    </template>
-  <!-- <InfoListVue/> -->
+    <template #fallback> Loading…… </template>
+    <!-- <InfoListVue/> -->
   </Suspense>
 
   <!-- <img alt="Vue logo" src="./assets/logo.png" />

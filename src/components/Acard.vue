@@ -49,7 +49,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import Item from './Itemdog.vue';
 import Icon from './Icon.vue';
 import M from './mfm.js';
@@ -60,6 +60,8 @@ const dp = props.alif.description.split(" · ");
 const floo = ref(dp[0]);
 const bio = ref(dp[1]);
 // const avatarurl = ref(null);
+
+
 
 
 
