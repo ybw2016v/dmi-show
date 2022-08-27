@@ -59,3 +59,5 @@ tmp/
 对于构建命令，如果没有太过复杂的东西可以直接`npm run build`，项目的根目录与构建输出目录`vite.config.js`保持一致即可。
 
 对于单页应用(SPA)，Cloudflare Pages会将404内容自动重定向到项目的入口`index.html`，如果cloudflare pages没有正确识别出这是一个SPA，会逐级寻找`404.html`并返回，所以还可以手动在`index.html`创建一个`404.html`，内容与`index.html`一致，然后在`vite.config.js`里将`404.html`也设置为入口文件，这样万一没能识别出SPA，也会返回`404.html`的内容，利用vite的多入口功能，这样就不影响正常使用了。
+
+一旦设置完成，在对应的分支更新代码后，应该就会触发cloudflare pages的更新与部署了，cloudflare pages会提供一个免费的`*.pages.dev`的域名，同样也可以用自己的域名来部署。
