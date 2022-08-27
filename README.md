@@ -50,7 +50,12 @@ tmp/
 
 然后就可以写vue代码了。具体的vue可以参见[vue文档](https://staging-cn.vuejs.org/guide/introduction.html)。
 
+### 在Cloudflare Pages上部署
 
+首先确认vue代码是否能正确编译出静态文件，如果可以，就可以进行部署了。
 
+按照cloudflare的操作提示，将账号与github或者gitlab上的项目进行关联，这样在存储库上的内容更新后几个自动触发cloudflare pages 的更新与部署。
 
-(未完成)
+对于构建命令，如果没有太过复杂的东西可以直接`npm run build`，项目的根目录与构建输出目录`vite.config.js`保持一致即可。
+
+对于单页应用(SPA)，Cloudflare Pages会将404内容自动重定向到项目的入口`index.html`，如果cloudflare pages没有正确识别出这是一个SPA，会逐级寻找`404.html`并返回，所以还可以手动在`index.html`创建一个`404.html`，内容与`index.html`一致，然后在`vite.config.js`里将`404.html`也设置为入口文件，这样万一没能识别出SPA，也会返回`404.html`的内容，利用vite的多入口功能，这样就不影响正常使用了。
